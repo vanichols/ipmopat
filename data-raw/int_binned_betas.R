@@ -1,5 +1,7 @@
 ## code to prepare the internal dataset int_binned_betas
 
+## it is internal data bc the functions will need to call it
+
 #--recreate the beta distributions the EUCLID project used
 #   for assigning uncertainty to the ratings
 #   and distribute them amongst five bins
@@ -8,15 +10,19 @@
 
 library(readr)
 library(dplyr)
+library(tidyr)
 
-read_csv("data-raw/byhand_beta-binned-cheat-sheet.csv")
+
+# 1. read in data ---------------------------------------------------------
+
+d1 <- read_delim("data-raw/byhand_beta-binned-cheat-sheet.csv", skip = 5, delim = ";")
 
 
-# process cheat sheet into tidy data --------------------------------------
+# 2. process cheat sheet into tidy data --------------------------------------
 
 #--distribution builder
-d.beta <-
-  read_excel("data/byhand_distribution-cheat-sheet.xlsx", skip = 5) %>%
+d2 <-
+  d1 %>%
   select(-tot) %>%
   fill(confidence) %>%
   janitor::clean_names() %>%
@@ -34,7 +40,11 @@ d.beta <-
   select(-name)
 
 
-usethis::use_data(DATASET, internal = TRUE)
+# 3. create internal dataset ----------------------------------------------
+
+int_binned_betas <- d2
+
+usethis::use_data(int_binned_betas, internal = TRUE)
 
 
 
