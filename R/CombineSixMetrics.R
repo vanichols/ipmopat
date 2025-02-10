@@ -52,7 +52,7 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
   dat1 <-
     tibble::tibble(value_bin = bayes.value.vector) %>%
     dplyr::group_by(value_bin) %>%
-    dplyr::summarise(score = n()/10000) %>%
+    dplyr::summarise(score = dplyr::n()/10000) %>%
     dplyr::mutate(weight = 100,
            confidence = "-",
            value_metric  = "All categories combined",
@@ -93,7 +93,7 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
   dat2 <-
     tibble::tibble(value_bin = bayes.value.vector2) %>%
     dplyr::group_by(value_bin) %>%
-    dplyr::summarise(score = n()/10000) %>%
+    dplyr::summarise(score = dplyr::n()/10000) %>%
     dplyr::mutate(weight = 100,
                   confidence = "-",
                   value_metric = "All categories combined",
@@ -103,7 +103,7 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
   dat <-
     dplyr::bind_rows(dat1, dat2) %>%
     dplyr::mutate(title = f_dat$title %>% unique()) %>%
-    select(title, scenario, short, value_metric, value_bin, score)
+    dplyr::select(title, scenario, short, value_metric, value_bin, score)
 
   return(dat)
 

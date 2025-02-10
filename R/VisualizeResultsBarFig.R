@@ -9,8 +9,10 @@
 VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_exampcombdat){
 
 
+
   #--needed things
   library(ggplot2)
+  library(patchwork)
 
   av1 <-"#A50026"
   av2 <-"#FDAE61"
@@ -52,9 +54,9 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
 
   p1 <-
     tmp.d1 %>%
-    filter(short != "all") %>%
-    arrange(scenario, -weight) %>%
-    mutate(value_binF = as.factor(value_bin),
+    dplyr::filter(short != "all") %>%
+    dplyr::arrange(scenario, -weight) %>%
+    dplyr::mutate(value_binF = as.factor(value_bin),
            value_metric = stringr::str_to_sentence(value_metric),
            descF = forcats::fct_inorder(desc),
            scenarioF = factor(scenario, levels = c("CCP", "IPM"))) %>%
@@ -73,9 +75,9 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
 
   p2 <-
     tmp.d1 %>%
-    filter(short == "all") %>%
-    arrange(scenario, -weight) %>%
-    mutate(value_binF = as.factor(value_bin),
+    dplyr::filter(short == "all") %>%
+    dplyr::arrange(scenario, -weight) %>%
+    dplyr::mutate(value_binF = as.factor(value_bin),
            value_metric = stringr::str_to_sentence(value_metric),
            descF = forcats::fct_inorder(desc),
            scenarioF = factor(scenario, levels = c("CCP", "IPM"))) %>%
@@ -93,8 +95,8 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
 
 
   layout <- "
-AA##
 AABB
+AA##
 AA##"
 
   theme_border <- theme_gray() +

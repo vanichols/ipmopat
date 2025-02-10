@@ -4,7 +4,7 @@
 \alias{CombineSixMetrics}
 \title{Combine six metrics into one summary}
 \usage{
-CombineSixMetrics(f_dat = ipmopat_exampprocdat, f_nsamp = 10000)
+CombineSixMetrics(f_dat = ipm_exampprocdat, f_nsamp = 10000)
 }
 \arguments{
 \item{f_dat}{Output from Ratings2Distributions function.}

@@ -3,4 +3,6 @@
 export("%>%")
 export(CombineSixMetrics)
 export(Ratings2Distributions)
+export(VisualizeResultsBarFig)
+export(VisualizeResultsDotFig)
 importFrom(magrittr,"%>%")

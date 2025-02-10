@@ -15,7 +15,7 @@ library(tidyr)
 
 # 1. read in data ---------------------------------------------------------
 
-d1 <- read_delim("data-raw/Ratings2Distributions-output.csv")
+d1 <- readr::read_delim("data-raw/Ratings2Distributions-output.csv")
 
 
 # 3. create internal dataset (not working)----------------------------------------------
