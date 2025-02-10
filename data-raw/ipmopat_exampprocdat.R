@@ -25,5 +25,5 @@ int_exampprocdat <- d1
 
 usethis::use_data(ipmopat_exampprocdat, overwrite = TRUE)
 #--this internal data thing is not working...
-usethis::use_data(int_exampprocdat, internal = TRUE, overwrite = TRUE)
+#usethis::use_data(int_exampprocdat, internal = TRUE, overwrite = TRUE)
 

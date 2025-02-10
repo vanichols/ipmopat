@@ -47,7 +47,7 @@ d3 <-
 
 impopat_exampdat <- d2
 usethis::use_data(impopat_exampdat, overwrite = TRUE)
-usethis::use_data(impopat_exampdat, internal = TRUE, overwrite = TRUE)
+#usethis::use_data(impopat_exampdat, internal = TRUE, overwrite = TRUE)
 
 impopat_shortinfo <- d3
 usethis::use_data(impopat_shortinfo, overwrite = TRUE)
