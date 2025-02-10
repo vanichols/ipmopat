@@ -42,10 +42,10 @@ d2 <-
 
 # 3. create internal dataset ----------------------------------------------
 
-ipmopat_binned_betas <- d2
+ipm_binned_betas <- d2
 int_binned_betas <- d2
 
-usethis::use_data(ipmopat_binned_betas, overwrite = TRUE)
+usethis::use_data(ipm_binned_betas, overwrite = TRUE)
 #--this internal data thing is not working...
 #usethis::use_data(int_binned_betas, internal = TRUE, overwrite = TRUE)
 

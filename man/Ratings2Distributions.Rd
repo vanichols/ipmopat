@@ -4,7 +4,7 @@
 \alias{Ratings2Distributions}
 \title{Create beta distributions for each rating and confidence pair}
 \usage{
-Ratings2Distributions(f_dat = impopat_exampdat)
+Ratings2Distributions(f_dat = ipm_exampdat, d_dat = ipm_binned_betas)
 }
 \arguments{
 \item{f_dat}{The elicited data.}

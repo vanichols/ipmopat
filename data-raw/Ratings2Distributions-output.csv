@@ -4,11 +4,11 @@ ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,cro
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,crop value,low impact,H,6,3,CCP
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,crop value,low impact,H,0,2,CCP
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,crop value,low impact,H,0,1,CCP
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,H,0,5,CCP
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,H,10,4,CCP
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,H,80,3,CCP
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,H,10,2,CCP
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,H,0,1,CCP
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,M,1,5,CCP
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,M,24,4,CCP
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,M,50,3,CCP
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,M,24,2,CCP
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,medium impact,M,1,1,CCP
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,direct costs,very low impact,H,80,5,CCP
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,direct costs,very low impact,H,20,4,CCP
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,direct costs,very low impact,H,0,3,CCP
@@ -34,11 +34,11 @@ ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,cro
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,crop value,low impact,H,6,3,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,crop value,low impact,H,0,2,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,50,crop value,low impact,H,0,1,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,M,7,5,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,M,50,4,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,M,37,3,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,M,5,2,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,M,1,1,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,VH,6,5,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,VH,90,4,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,VH,4,3,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,VH,0,2,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,health and safety,low impact,VH,0,1,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,direct costs,low impact,M,7,5,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,direct costs,low impact,M,50,4,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,12.5,direct costs,low impact,M,37,3,IPM
@@ -54,8 +54,8 @@ ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,t
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,time and management,low impact,H,6,3,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,time and management,low impact,H,0,2,IPM
 ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,time and management,low impact,H,0,1,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,low impact,M,7,5,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,low impact,M,50,4,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,low impact,M,37,3,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,low impact,M,5,2,IPM
-ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,low impact,M,1,1,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,medium impact,M,1,5,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,medium impact,M,24,4,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,medium impact,M,50,3,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,medium impact,M,24,2,IPM
+ABC - Using fairy dust (IPM) instead of glyphosate (CCP) on lettuce crops,6.25,coordination requirements,medium impact,M,1,1,IPM

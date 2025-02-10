@@ -5,9 +5,7 @@
 #' @export
 
 
-Ratings2Distributions <- function(f_dat = impopat_exampdat){
-
-  d_dat <- int_binned_betas
+Ratings2Distributions <- function(f_dat = ipm_exampdat, d_dat = ipm_binned_betas){
 
   #--get list of the six metrics
   t.cats <-

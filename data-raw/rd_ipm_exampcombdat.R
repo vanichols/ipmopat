@@ -15,15 +15,12 @@ library(tidyr)
 
 # 1. read in data ---------------------------------------------------------
 
-d1 <- read_delim("data-raw/Ratings2Distributions-output.csv")
+d1 <- read_delim("data-raw/CombineSixMetrics-output.csv")
 
 
-# 3. create internal dataset (not working)----------------------------------------------
+# 2. make package data ----------------------------------------------------
 
-ipmopat_exampprocdat <- d1
-int_exampprocdat <- d1
+ipm_exampcombdat <- d1
 
-usethis::use_data(ipmopat_exampprocdat, overwrite = TRUE)
-#--this internal data thing is not working...
-#usethis::use_data(int_exampprocdat, internal = TRUE, overwrite = TRUE)
+usethis::use_data(ipm_exampcombdat, overwrite = TRUE)
 
