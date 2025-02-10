@@ -78,18 +78,18 @@ See more details about the categories, it will have some more detail added as we
 ipm_shortinfo
 ```
 Create distributions of 'value' for each pest management scenario within each of the six metrics:
-```{r example2, echo = F, message=F, warning=F}
+```{r example2, message=F, warning=F, include = T}
 head(Ratings2Distributions())
 ```
 
 Use the results from Ratings2Distributions, and combine the six metrics into one summary
-```{r example3, echo = F}
+```{r example3, include = T}
 head(CombineSixMetrics())
 ```
 
 
 Finally, you can visualize the results in either a dot plot or a bar graph
-```{r example4, echo = F, warning=F, fig.height=12, fig.width=8}
+```{r example4, warning=F, include = T, fig.height=12, fig.width=8}
 VisualizeResultsBarFig()
 ```
 

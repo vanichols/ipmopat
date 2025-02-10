@@ -100,32 +100,41 @@ ipm_shortinfo
 Create distributions of ‘value’ for each pest management scenario within
 each of the six metrics:
 
-    #> # A tibble: 6 × 8
-    #>   title                  weight short rating confidence score value_bin scenario
-    #>   <chr>                   <dbl> <chr> <chr>  <chr>      <dbl>     <dbl> <chr>   
-    #> 1 ABC - Using fairy dus…   50   crop… low i… H             14         5 CCP     
-    #> 2 ABC - Using fairy dus…   50   crop… low i… H             80         4 CCP     
-    #> 3 ABC - Using fairy dus…   50   crop… low i… H              6         3 CCP     
-    #> 4 ABC - Using fairy dus…   50   crop… low i… H              0         2 CCP     
-    #> 5 ABC - Using fairy dus…   50   crop… low i… H              0         1 CCP     
-    #> 6 ABC - Using fairy dus…   12.5 heal… mediu… M              1         5 CCP
+``` r
+head(Ratings2Distributions())
+#> # A tibble: 6 × 8
+#>   title                  weight short rating confidence score value_bin scenario
+#>   <chr>                   <dbl> <chr> <chr>  <chr>      <dbl>     <dbl> <chr>   
+#> 1 ABC - Using fairy dus…   50   crop… low i… H             14         5 CCP     
+#> 2 ABC - Using fairy dus…   50   crop… low i… H             80         4 CCP     
+#> 3 ABC - Using fairy dus…   50   crop… low i… H              6         3 CCP     
+#> 4 ABC - Using fairy dus…   50   crop… low i… H              0         2 CCP     
+#> 5 ABC - Using fairy dus…   50   crop… low i… H              0         1 CCP     
+#> 6 ABC - Using fairy dus…   12.5 heal… mediu… M              1         5 CCP
+```
 
 Use the results from Ratings2Distributions, and combine the six metrics
 into one summary
 
-    #> # A tibble: 6 × 6
-    #>   title                             scenario short value_metric value_bin  score
-    #>   <chr>                             <chr>    <chr> <chr>            <dbl>  <dbl>
-    #> 1 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         1  0.132
-    #> 2 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         2  3.01 
-    #> 3 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         3  9.99 
-    #> 4 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         4 58.0  
-    #> 5 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         5 28.9  
-    #> 6 ABC - Using fairy dust (IPM) ins… IPM      all   All categor…         1  0.308
+``` r
+head(CombineSixMetrics())
+#> # A tibble: 6 × 6
+#>   title                             scenario short value_metric value_bin  score
+#>   <chr>                             <chr>    <chr> <chr>            <dbl>  <dbl>
+#> 1 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         1  0.133
+#> 2 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         2  3.00 
+#> 3 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         3 10.0  
+#> 4 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         4 57.9  
+#> 5 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         5 28.9  
+#> 6 ABC - Using fairy dust (IPM) ins… IPM      all   All categor…         1  0.302
+```
 
 Finally, you can visualize the results in either a dot plot or a bar
 graph
 
-    #> Joining with `by = join_by(short)`
+``` r
+VisualizeResultsBarFig()
+#> Joining with `by = join_by(short)`
+```
 
 <img src="man/figures/README-example4-1.png" width="100%" />
