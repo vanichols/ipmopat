@@ -16,7 +16,7 @@ library(readxl)
 
 # 1. read in data ---------------------------------------------------------
 
-d1 <- read_excel("data-raw/byhand_distribution-cheat-sheet.xlsx", skip = 5)
+d1 <- read_excel("data-raw/byhand_distribution-cheat-sheet2.xlsx", skip = 5)
 
 
 # 2. process cheat sheet into tidy data --------------------------------------
@@ -53,7 +53,6 @@ d2 %>%
 # 3. create internal dataset ----------------------------------------------
 
 ipm_binned_betas <- d2
-int_binned_betas <- d2
 
 usethis::use_data(ipm_binned_betas, overwrite = TRUE)
 #--this internal data thing is not working...
