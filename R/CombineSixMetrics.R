@@ -17,6 +17,7 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
     dplyr::pull(scenario) %>%
     unique()
 
+  value_bin_options <- f_dat %>% select(value_bin) %>% distinct()
 
   #--first scenario
   f_dat1 <-
@@ -50,10 +51,15 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
   }
 
   dat1 <-
-    tibble::tibble(value_bin = bayes.value.vector) %>%
-    dplyr::group_by(value_bin) %>%
-    dplyr::summarise(score = dplyr::n()/10000) %>%
-    dplyr::mutate(weight = 100,
+    value_bin_options %>%
+    left_join(
+      tibble::tibble(value_bin = bayes.value.vector2) %>%
+        dplyr::group_by(value_bin) %>%
+        dplyr::summarise(score = dplyr::n()/10000)
+    ) %>%
+    dplyr::mutate(
+      score = ifelse(is.na(score), 0, score),
+      weight = 100,
            confidence = "-",
            value_metric  = "All categories combined",
            short = "all",
@@ -90,11 +96,18 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
 
   }
 
+
+
   dat2 <-
-    tibble::tibble(value_bin = bayes.value.vector2) %>%
-    dplyr::group_by(value_bin) %>%
-    dplyr::summarise(score = dplyr::n()/10000) %>%
-    dplyr::mutate(weight = 100,
+    value_bin_options %>%
+    left_join(
+      tibble::tibble(value_bin = bayes.value.vector2) %>%
+        dplyr::group_by(value_bin) %>%
+        dplyr::summarise(score = dplyr::n()/10000)
+      ) %>%
+    dplyr::mutate(
+      score = ifelse(is.na(score), 0, score),
+      weight = 100,
                   confidence = "-",
                   value_metric = "All categories combined",
                   short = "all",
