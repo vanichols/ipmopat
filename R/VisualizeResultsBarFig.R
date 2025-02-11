@@ -60,10 +60,10 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
            value_metric = stringr::str_to_sentence(value_metric),
            descF = forcats::fct_inorder(desc),
            scenarioF = factor(scenario, levels = c("CCP", "IPM"))) %>%
-    ggplot(aes(value_bin, score/100)) +
+    ggplot(aes(value_bin, score)) +
     geom_col(aes(fill = value_binF), linewidth = 1.5, color = "black", show.legend = F) +
     scale_fill_manual(values = c(av1, av2, av3, av4, av5)) +
-    scale_y_continuous(labels = scales::label_percent()) +
+    scale_y_continuous(limits = c(0, 100)) +
     scale_x_continuous(
       breaks = c(1, 2, 3, 4, 5),
       labels = c("Very low value", "Low value", "Medium value", "Highly valuable", "Very highly valuable")) +
@@ -84,7 +84,7 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
     ggplot(aes(value_bin, score)) +
     geom_col(aes(fill = value_binF), linewidth = 1.5, color = "black", show.legend = F) +
     scale_fill_manual(values = c(av1, av2, av3, av4, av5)) +
-    scale_y_continuous(limits = c(0, 1)) +
+    scale_y_continuous(limits = c(0, 100)) +
     scale_x_continuous(
       breaks = c(1, 2, 3, 4, 5),
       labels = c("Very low value", "Low value", "Medium value", "Highly valuable", "Very highly valuable")) +
