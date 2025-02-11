@@ -21,14 +21,15 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
   av5 <- "#313695"
 
   th1 <- theme(axis.title.y = element_text(size = rel(1.5)),
-               axis.text.y = element_blank(),
+               axis.text.y = element_text(color = "gray80"),
                axis.text = element_text(size = rel(0.8)),
-               axis.ticks.y = element_blank(),
+               #axis.ticks.y = element_blank(),
                strip.background = element_rect(fill = "gray80", color = "black"),
                plot.title = element_text(hjust = 0.5, size = rel(2)),
                strip.text.y.left = element_text(angle = 0),
                strip.text.x = element_text(size = rel(1.5)),
                panel.background = element_rect(fill = "white"),
+               panel.grid.major.y = element_line(color = "gray80"),
                axis.text.x = element_text(angle = 45, hjust = 1))
 
 
@@ -61,9 +62,11 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
            descF = forcats::fct_inorder(desc),
            scenarioF = factor(scenario, levels = c("CCP", "IPM"))) %>%
     ggplot(aes(value_bin, score)) +
-    geom_col(aes(fill = value_binF), linewidth = 1.5, color = "black", show.legend = F) +
+    geom_col(aes(fill = value_binF), linewidth = 1, color = "black", show.legend = F) +
     scale_fill_manual(values = c(av1, av2, av3, av4, av5)) +
-    scale_y_continuous(limits = c(0, 100)) +
+    scale_y_continuous(limits = c(0, 100),
+                       breaks = c(0, 25, 50, 75, 100),
+                       position = "right") +
     scale_x_continuous(
       breaks = c(1, 2, 3, 4, 5),
       labels = c("Very low value", "Low value", "Medium value", "Highly valuable", "Very highly valuable")) +
@@ -82,9 +85,11 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
            descF = forcats::fct_inorder(desc),
            scenarioF = factor(scenario, levels = c("CCP", "IPM"))) %>%
     ggplot(aes(value_bin, score)) +
-    geom_col(aes(fill = value_binF), linewidth = 1.5, color = "black", show.legend = F) +
+    geom_col(aes(fill = value_binF), linewidth = 1, color = "black", show.legend = F) +
     scale_fill_manual(values = c(av1, av2, av3, av4, av5)) +
-    scale_y_continuous(limits = c(0, 100)) +
+    scale_y_continuous(limits = c(0, 100),
+                       breaks = c(0, 25, 50, 75, 100),
+                       position = "right") +
     scale_x_continuous(
       breaks = c(1, 2, 3, 4, 5),
       labels = c("Very low value", "Low value", "Medium value", "Highly valuable", "Very highly valuable")) +
