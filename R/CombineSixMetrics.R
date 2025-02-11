@@ -53,7 +53,7 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
   dat1 <-
     value_bin_options %>%
     left_join(
-      tibble::tibble(value_bin = bayes.value.vector2) %>%
+      tibble::tibble(value_bin = bayes.value.vector) %>%
         dplyr::group_by(value_bin) %>%
         dplyr::summarise(score = dplyr::n()/10000)
     ) %>%
@@ -95,7 +95,6 @@ CombineSixMetrics <- function(f_dat = ipm_exampprocdat, f_nsamp = 10000){
     k <- k + 1
 
   }
-
 
 
   dat2 <-
