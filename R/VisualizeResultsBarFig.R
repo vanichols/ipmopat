@@ -30,6 +30,7 @@ VisualizeResultsBarFig <- function(f_dat1 = ipm_exampprocdat, f_dat2 = ipm_examp
                strip.text.x = element_text(size = rel(1.5)),
                panel.background = element_rect(fill = "white"),
                panel.grid.major.y = element_line(color = "gray80"),
+               panel.grid.major.x = element_blank(),
                axis.text.x = element_text(angle = 45, hjust = 1))
 
 
