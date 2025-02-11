@@ -7,17 +7,20 @@
 
 Ratings2Distributions <- function(f_dat = ipm_exampdat, d_dat = ipm_binned_betas){
 
-  #--make sure weight is a numeric value
-  f_dat$weight <- as.numeric(f_dat$weight)
+  #--make sure weight is a numeric value, fill title
+  f_dat2 <-
+    f_dat %>%
+    mutate(weight = as.numeric(weight)) %>%
+    fill(title)
 
   #--get list of the six metrics
   t.cats <-
-    f_dat %>%
+    f_dat2 %>%
     dplyr::pull(short)
 
   #--separate data into ccp data and ipm data
   f_dat_ccp <-
-    f_dat %>%
+    f_dat2 %>%
     dplyr::select(title, weight, short, rating = ccp_rating, confidence = ccp_confidence)
 
 
@@ -49,7 +52,7 @@ Ratings2Distributions <- function(f_dat = ipm_exampdat, d_dat = ipm_binned_betas
 
   #--separate data into ccp data and ipm data
   f_dat_ipm <-
-    f_dat %>%
+    f_dat2 %>%
     dplyr::select(title, weight, short,
            rating = ipm_rating,
            confidence = ipm_confidence)
