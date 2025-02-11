@@ -7,15 +7,16 @@
 #   and distribute them amongst five bins
 
 #--I used this code as a helper tool, I created the distribution cheat sheet by hand
-
+library(forcats)
 library(readr)
 library(dplyr)
 library(tidyr)
-
+library(ggplot2)
+library(readxl)
 
 # 1. read in data ---------------------------------------------------------
 
-d1 <- read_delim("data-raw/byhand_beta-binned-cheat-sheet.csv", skip = 5, delim = ";")
+d1 <- read_excel("data-raw/byhand_distribution-cheat-sheet.xlsx", skip = 5)
 
 
 # 2. process cheat sheet into tidy data --------------------------------------
@@ -38,6 +39,15 @@ d2 <-
          )) %>%
   rename(score = value) %>%
   select(-name)
+
+
+#--check it
+d2 %>%
+  mutate(ratingF = fct_inorder(rating),
+         confidenceF = fct_inorder(confidence)) %>%
+  ggplot(aes(value_bin, score)) +
+  geom_col() +
+  facet_grid(ratingF ~confidenceF)
 
 
 # 3. create internal dataset ----------------------------------------------
