@@ -7,6 +7,9 @@
 
 Ratings2Distributions <- function(f_dat = ipm_exampdat, d_dat = ipm_binned_betas){
 
+  #--make sure weight is a numeric value
+  f_dat$weight <- as.numeric(f_dat$weight)
+
   #--get list of the six metrics
   t.cats <-
     f_dat %>%
