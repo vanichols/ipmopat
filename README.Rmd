@@ -43,8 +43,8 @@ The goal of **ipmopat** is to provide open-source processing of data elicited fr
 5. The expert will repeat steps 3 and 4 for the IPM scenario
 6. This **impopat** R package will 
   - take those ratings/confidence level pairs, and create value distributions for each of the six categories
-  - combine the six categories into a summary value distribution, based on the user 
-  - create visualizations that compare the value of the two scenarios
+  - combine the six categories into a summary value distribution 
+  - create visualizations that compare the value of the two scenarios with bar graphs
 
 
 ## Installation
@@ -58,39 +58,21 @@ pak::pak("vanichols/ipmopat")
 
 ## Example
 
-Look at example data template for comparing glyphosate and fairy dust in lettuce for weed control
-
-```{r example1, warning=F, message=F, include=F}
-
-library(dplyr)
-```
+Look at example data. This example is comparing glyphosate and fairy dust in lettuce for weed control. This example data should be used as a template.
 
 ```{r example1a, warning=F, message=F}
 library(ipmopat)
 
-ipm_exampdat %>% 
-  dplyr::select(short, weight, ccp_rating, ccp_confidence, ipm_rating, ipm_confidence)
+ipm_exinput
 ```
 
-See more details about the categories, it will have some more detail added as we refine the questionaire...
+See more details about the impact categories, it will have some more detail added as we refine the questionaire...
 
 ```{r example1b}
-ipm_shortinfo
+ipm_impactcatsinfo
 ```
-Create distributions of 'value' for each pest management scenario within each of the six metrics:
-```{r example2, message=F, warning=F, include = T}
-head(Ratings2Distributions())
-```
+One monster function will intake your data, and pop out a bar graph visualization (color blind friendly, we believe). Here we use the example data as input.Thanks for reading.
 
-Use the results from Ratings2Distributions, and combine the six metrics into one summary
-```{r example3, include = T}
-head(CombineSixMetrics())
-```
-
-
-Finally, you can visualize the results in either a dot plot or a bar graph
 ```{r example4, warning=F, include = T, fig.height=12, fig.width=8}
-VisualizeResultsBarFig()
+MonsterFxn(f_dat = ipm_exinput)
 ```
-
-

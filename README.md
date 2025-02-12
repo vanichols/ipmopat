@@ -46,9 +46,9 @@ thus the clunky name, IPMOPAT.
 
 - take those ratings/confidence level pairs, and create value
   distributions for each of the six categories
-- combine the six categories into a summary value distribution, based on
-  the user
-- create visualizations that compare the value of the two scenarios
+- combine the six categories into a summary value distribution
+- create visualizations that compare the value of the two scenarios with
+  bar graphs
 
 ## Installation
 
@@ -62,78 +62,49 @@ pak::pak("vanichols/ipmopat")
 
 ## Example
 
-Look at example data template for comparing glyphosate and fairy dust in
-lettuce for weed control
+Look at example data. This example is comparing glyphosate and fairy
+dust in lettuce for weed control. This example data should be used as a
+template.
 
 ``` r
 library(ipmopat)
 
-ipm_exampdat %>% 
-  dplyr::select(short, weight, ccp_rating, ccp_confidence, ipm_rating, ipm_confidence)
-#> # A tibble: 6 × 6
-#>   short               weight ccp_rating ccp_confidence ipm_rating ipm_confidence
-#>   <chr>                <dbl> <chr>      <chr>          <chr>      <chr>         
-#> 1 crop value           50    low impact H              low impact H             
-#> 2 health and safety    12.5  medium im… M              low impact VH            
-#> 3 direct costs         12.5  very low … H              low impact M             
-#> 4 environment          12.5  low impact H              medium im… M             
-#> 5 time and management   6.25 very low … H              low impact H             
-#> 6 coordination requi…   6.25 very low … H              medium im… M
+ipm_exinput
+#> # A tibble: 6 × 7
+#>   title         weight short ccp_rating ccp_confidence ipm_rating ipm_confidence
+#>   <chr>          <dbl> <chr> <chr>      <chr>          <chr>      <chr>         
+#> 1 ABC - Using …  50    crop… low impact H              low impact H             
+#> 2 <NA>           12.5  heal… medium im… M              low impact VH            
+#> 3 <NA>           12.5  dire… very low … H              low impact M             
+#> 4 <NA>           12.5  envi… low impact H              medium im… M             
+#> 5 <NA>            6.25 time… very low … H              low impact H             
+#> 6 <NA>            6.25 coor… very low … H              medium im… M
 ```
 
-See more details about the categories, it will have some more detail
-added as we refine the questionaire…
+See more details about the impact categories, it will have some more
+detail added as we refine the questionaire…
 
 ``` r
-ipm_shortinfo
+ipm_impactcatsinfo
 #> # A tibble: 6 × 3
-#>   value_metric                           short                     question     
-#>   <chr>                                  <chr>                     <chr>        
-#> 1 Maintaining crop value                 crop value                Crop value l…
-#> 2 Reducing health and safety risks       health and safety         Worker (non-…
-#> 3 Minimizing direct costs                direct costs              The cost of …
-#> 4 Minimizing environmental impacts       environment               The potentia…
-#> 5 Minimizing time and management demands time and management       The time and…
-#> 6 Immediate usability                    coordination requirements The coordina…
+#>   short                     value_metric                           question     
+#>   <chr>                     <chr>                                  <chr>        
+#> 1 crop value                Maintaining crop value                 Crop value l…
+#> 2 health and safety         Reducing health and safety risks       Worker (non-…
+#> 3 direct costs              Minimizing direct costs                The cost of …
+#> 4 environment               Minimizing environmental impacts       The potentia…
+#> 5 time and management       Minimizing time and management demands The time and…
+#> 6 coordination requirements Immediate usability                    The coordina…
 ```
 
-Create distributions of ‘value’ for each pest management scenario within
-each of the six metrics:
+One monster function will intake your data, and pop out a bar graph
+visualization (color blind friendly, we believe). Here we use the
+example data as input.Thanks for reading.
 
 ``` r
-head(Ratings2Distributions())
-#> # A tibble: 6 × 8
-#>   title                  weight short rating confidence score value_bin scenario
-#>   <chr>                   <dbl> <chr> <chr>  <chr>      <dbl>     <dbl> <chr>   
-#> 1 ABC - Using fairy dus…   50   crop… low i… H             14         5 CCP     
-#> 2 ABC - Using fairy dus…   50   crop… low i… H             80         4 CCP     
-#> 3 ABC - Using fairy dus…   50   crop… low i… H              6         3 CCP     
-#> 4 ABC - Using fairy dus…   50   crop… low i… H              0         2 CCP     
-#> 5 ABC - Using fairy dus…   50   crop… low i… H              0         1 CCP     
-#> 6 ABC - Using fairy dus…   12.5 heal… mediu… M              1         5 CCP
-```
-
-Use the results from Ratings2Distributions, and combine the six metrics
-into one summary
-
-``` r
-head(CombineSixMetrics())
-#> # A tibble: 6 × 6
-#>   title                             scenario short value_metric value_bin  score
-#>   <chr>                             <chr>    <chr> <chr>            <dbl>  <dbl>
-#> 1 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         1  0.133
-#> 2 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         2  3.00 
-#> 3 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         3 10.0  
-#> 4 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         4 57.9  
-#> 5 ABC - Using fairy dust (IPM) ins… CCP      all   All categor…         5 28.9  
-#> 6 ABC - Using fairy dust (IPM) ins… IPM      all   All categor…         1  0.302
-```
-
-Finally, you can visualize the results in either a dot plot or a bar
-graph
-
-``` r
-VisualizeResultsBarFig()
+MonsterFxn(f_dat = ipm_exinput)
+#> Joining with `by = join_by(value_bin)`
+#> Joining with `by = join_by(value_bin)`
 #> Joining with `by = join_by(short)`
 ```
 
