@@ -4,10 +4,10 @@
 \alias{MonsterFxn}
 \title{Intakes elicitation data}
 \usage{
-MonsterFxn(f_dat = internal_exinput)
+MonsterFxn(f_dat = ipm_exinput)
 }
 \arguments{
-\item{f_dat}{The elicited data.}
+\item{f_dat}{The elicited data, default is to use ipm_exinput}
 }
 \value{
 An image
