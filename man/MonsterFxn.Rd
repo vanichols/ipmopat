@@ -4,7 +4,7 @@
 \alias{MonsterFxn}
 \title{Intakes elicitation data}
 \usage{
-MonsterFxn(f_dat = ipm_exinput)
+MonsterFxn(f_dat = internal_exinput)
 }
 \arguments{
 \item{f_dat}{The elicited data.}
