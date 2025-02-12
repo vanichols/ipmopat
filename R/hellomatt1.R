@@ -1,6 +1,6 @@
-#' Testy function
+#' Testy function #1
 #'
-#' @returns A dataframe
+#' @returns Prints a string
 #' @export
 
 
