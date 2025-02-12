@@ -2,6 +2,9 @@
 
 export("%>%")
 export(CombineSixMetrics)
+export(HelloMattFxn)
+export(HelloMattFxn2)
+export(MonsterFxn)
 export(Ratings2Distributions)
 export(VisualizeResultsBarFig)
 export(VisualizeResultsDotFig)
