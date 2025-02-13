@@ -26,21 +26,9 @@ thus the clunky name, IPMOPAT.
 - Coordination requirements
 
 3.  Starting with the CCP scenario, the expert will rate each value
-    category:
-
-- Very low value
-- Low value
-- Medium value
-- High value
-- Very high value
-
-4.  The expert will also assign a confidence level to their ratings:
-
-- Low
-- Medium
-- High
-- Very High
-
+    category (very low value, low, medium, high, very high)
+4.  The expert will also assign a confidence level (low, medium, high,
+    very high) to their ratings
 5.  The expert will repeat steps 3 and 4 for the IPM scenario
 6.  This **impopat** R package will
 
@@ -68,7 +56,6 @@ template.
 
 ``` r
 library(ipmopat)
-
 ipm_exinput
 #> # A tibble: 6 × 7
 #>   title         weight short ccp_rating ccp_confidence ipm_rating ipm_confidence
@@ -99,10 +86,11 @@ ipm_impactcatsinfo
 
 One monster function will intake your data, and pop out a bar graph
 visualization (color blind friendly, we believe). Here we use the
-example data as input.Thanks for reading.
+example data as input.Thanks for reading.Note there is a function to
+make output in a way Python will recognize.
 
 ``` r
-MonsterFxn(f_dat = ipm_exinput)
+MakeImage4R(f_dat = ipm_exinput)
 #> Joining with `by = join_by(value_bin)`
 #> Joining with `by = join_by(value_bin)`
 #> Joining with `by = join_by(short)`

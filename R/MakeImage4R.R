@@ -5,7 +5,7 @@
 #' @export
 
 
-MonsterFxn <- function(f_dat = ipm_exinput){
+MakeImage4R <- function(f_dat = ipm_exinput){
 
   #--A. use lookup beta distributions to match to elicitation data----------------------
   #--make sure input data is correct
@@ -228,7 +228,7 @@ MonsterFxn <- function(f_dat = ipm_exinput){
 
       ##-----visualize----------------------------------
 
-      av1 <-"#A50026"
+       av1 <-"#A50026"
       av2 <-"#FDAE61"
       av3 <-"#FFFFBF"
       av4 <- "#ABD9E9"
